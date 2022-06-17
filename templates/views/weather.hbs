@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerLinks}}
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .TempInput{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: #1e272e;
+            border-radius: 25px;
+        }
+        #cityReqd{
+            width: 80%;
+            background-color: #413F42;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            height: 5rem;
+            font-size: 2rem;
+            padding-left: 1rem;
+        }
+        #submitButton{
+            background-color: #413F42;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 1rem 1.5rem;
+            font-size: 2rem;
+        }
+        #submitButton:hover{
+            background-color: #F9CEEE;
+            color: #413F42;
+        }
+        .TempInfo{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: #1e272e;
+            border-radius: 25px;
+            color: #fff;
+        }
+        #Citydata{
+            background-color: #413F42;
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 2rem;
+            height: 7rem;
+            font-size: 2rem;
+            border-radius: 25px;
+        }
+        .dat{
+            text-align: center;
+            background-color: #413F42;
+            padding: 2rem 2rem;
+            height: 17rem;
+            font-size: 8rem;
+            border-radius: 25px;
+        }
+        @media(max-width: 768px){
+            .TempInput{
+                width: 80%;
+            }
+            .TempInfo{
+                width: 80%;
+            }
+            .dat{
+                height: 15rem;
+                font-size: 6rem;
+            }
+        }
+    </style>
+    <title>Weather</title>
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="TempInput">
+                    <input type="text" id="cityReqd" placeholder="Enter City" autocomplete="off">
+                    <button onclick="weather()" id="submitButton">submit</button>
+                </div>
+
+                <div class="TempInfo">
+                    <div id="Citydata">
+                        <div id="city_name">City</div>
+                        <div id="city_det">ID</div>
+                    </div>
+                    <hr>
+                    <div class="dat"><span id="data">0</span><span>&#8451;</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
